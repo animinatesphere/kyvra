@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans antialiased; }
+  ::selection { @apply bg-lime text-ink; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 md:px-10; }
+  .h-display { @apply font-display uppercase leading-[0.9] tracking-tight; }
+  .btn { @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-colors; }
+  .btn-lime { @apply btn bg-lime text-ink hover:bg-white; }
+  .btn-ghost { @apply btn border border-white/20 text-bone hover:border-lime hover:text-lime; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.3em] text-lime; }
+
+  /* admin */
+  .card { @apply rounded-2xl border border-white/10 bg-coal p-5; }
+  .input { @apply w-full rounded-xl border border-white/10 bg-ink px-4 py-2.5 text-sm text-bone outline-none placeholder:text-white/30 focus:border-lime; }
+  .label { @apply mb-1.5 block text-xs font-medium uppercase tracking-wider text-white/50; }
+  .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium; }
+}
+
+.grain::after {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.text-outline { -webkit-text-stroke: 1.5px #f2efe9; color: transparent; }
+@media (pointer: coarse) { .cursor-dot { display: none; } }
